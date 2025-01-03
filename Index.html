@@ -1,0 +1,143 @@
+<! DOCTYPE html>
+<html lang="es">
+
+    <head>
+            <meta charset='utf-8'>
+            <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+			<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" href="stylesheet2.css"/>
+			<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+            <script type="text/javascript" src="js/script.js"></script>
+			
+            
+		
+    </head>
+    <body>
+         <div id="contenido">
+  <header>
+        <hgroup>
+		<img class='arte' src="arte.png"/>
+        </hgroup>
+	
+  <nav>
+       <ul>
+	   
+           <li><a href="Index.html">Inicio</a></li>
+           <li><a href="recomendada.html">Cooling</a></li>
+           <li><a href="FOOO.html">Modding</a></li>
+		   <li><a href="formulario.html">Registrarse</a></li>
+       </ul>
+</nav>
+    </header>
+	
+		<div class="form_container">
+		<div class="slideContainer">
+				<div class="slide" data-background="e1.jpg">			
+				</div>
+				<div class="slide" data-background="e2.jpg">			
+				</div>
+				<div class="slide" data-background="e3.jpg">				
+				</div>
+				<div class="slide" data-background="e4.jpg">
+				</div>
+		</div>
+		<div class="left"></div>
+		<div class="right"></div>		
+	</div>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		var indicador = 0;
+		$(document).on('ready', function(){
+			$('.left').on('click', function(e){
+				e.preventDefault();
+				moveSlider('left');
+			});
+			$('.right').on('click', function(e){
+				e.preventDefault();
+				moveSlider('right');
+			});
+			function auto(){
+				intv = setInterval(function(){
+				$('.right').click();
+				}, 3000);
+				}
+				auto(); // start
+				$('.form_container').hover(function( e ){
+				return e.type=='mouseenter'?clearInterval(intv):auto();
+				});
+			defineSizes();
+		});
+		
+		$(window).on('resize', defineSizes);	
+			function defineSizes(){
+				$('.form_container .slide').each(function(i, el) {
+					$(el).css({
+						'background-image': 'url('+$(el).data('background')+')',
+						'height': ($('.form_container').width() * 0.42)+'px',
+						'width' : ($('.form_container').width())+'px'
+					});
+				});
+			$('.form_container .slideContainer').css({
+				'margin-left': -(indicador * $('.form_container').width())+'px'
+			})
+			}
+		function moveSlider(direccion){
+			var limite = $('.form_container .slide').length;
+			indicador = (direccion == 'right') ? indicador + 1 : indicador - 1;
+			indicador = (indicador >= limite) ? 0 : indicador;
+			indicador = (indicador < 0) ? limite - 1 : indicador;
+			$('.form_container .slideContainer').animate({
+				'margin-left': -(indicador * $('.form_container').width())+'px'
+			})
+		}
+	</script>
+	<br></br>
+	
+<section>
+    <div id="textoPr">
+<header>
+        <hgroup>
+               <h2>Bienvenido a Cooling & Modding In PCs</h2>
+			   
+			   <center><img src="arte.png" width="350px" height="160px"></center>
+			   
+<p align="justify">Aquí encontrarás toda la información detallada y técnica sobre estos dos "hobbies" por decirlo así de la modificación fisica y rendimiento del computador.
+El objetivo de está pagina web, es dar a conocer sobre estos dos grandes temas de la informatica, donde se argumentara sobre su respectivo concepto, que caracteristicias poseen, que similitudes hay entre estos, en que puede
+ mejorar la aplicación de estos dos en nuestras computadoras, y demás interrogantes, que tendrán respuesta a continuación. Cabe mencionar. que estos dos temas van orientados a cualquier usuario apasionado
+por la informática, pero en relevancia a los Gamers, Modders, Y Técnicos Especializados En Hardware.</p>
+
+<p align="justify">Bien, para empezar, sería bueno que se diera a conocer los mejores exponentes del Modding a nivel internacional, donde son los mejores de su país
+por su gran habilidad artistica dentro de este campo. Esperamos que te deleites con sus mejores obras. Veamos quienés son: <br></br></p>
+
+	    <center><img src="bb.png" width="80px" height="80px"/></center>
+	
+		<p align="center">¡ATENCIÓN!</p>
+		
+		<p align="center">Si por ahora estás preocupado y entiendes muy poco. ¡Tranquilo!, en nuestras secciones vamos a explicar cada palabara, cada término, y implementaremos imagenes, videos
+		y otro tipo de material didactico, para que así el aprendizaje sobre estos dos temas, sea más  fácil de entender y sea mucho más dinámico.</p>
+		
+		<p align="center">¡Y a propósito te invitamos a que nos sigas en nuestras redes sociales de Facebook, Twitter, Google+, Youtube, para que sigas todo nuestro contenido y estés muy bien informado sobre estos temas
+		y mucho más! </p>
+
+
+		<center>
+
+<div class="caja-redes">
+   <a href="https://twitter.com/CoolingPc" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
+   <a href="https://www.facebook.com/pages/Cooling-Modding-In-PCs/682493165189813?skip_nax_wizard=true&ref_type=logout_gear" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
+   <a href="https://plus.google.com/u/0/107501403097295134929/posts?hl=es" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
+</div>
+
+</center>
+		
+		<br></br>
+		<br></br>
+	     	   	   
+<center><p class="copyright">Cooling | Modding | Empresas </p>
+<p class="copyright2">Diseñadores Web: Sebastián Tutistar Valencia - Vivian Vanessa Ijaji - Marcela Niño Mejia.</p>
+<p class="copyright3">Copyright © 2015. All Rights Reserved</p></center>
+        </hgroup>
+</header>
+</div>
+</body>
+</html>
